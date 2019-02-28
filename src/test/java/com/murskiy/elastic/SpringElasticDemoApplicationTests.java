@@ -1,4 +1,4 @@
-package com.techprimers.elastic;
+package com.murskiy.elastic;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,7 +1,7 @@
-package com.techprimers.elastic.resource;
+package com.murskiy.elastic.resource;
 
-import com.techprimers.elastic.model.Users;
-import com.techprimers.elastic.repository.UsersRepository;
+import com.murskiy.elastic.repository.UsersRepository;
+import com.murskiy.elastic.model.Users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,6 +37,19 @@ public class SearchResource {
         userses.forEach(usersList::add);
         return usersList;
     }
-
+    @GetMapping(value = "/add/{name}/{id}")
+    public List<Users> addUser(@PathVariable final String name, @PathVariable final long id) {
+        Users users = new Users(name, id, "test", 20L);
+        usersRepository.save(users);
+        List<Users> usersList = new ArrayList<>();
+        Iterable<Users> userses = usersRepository.findAll();
+        userses.forEach(usersList::add);
+        return usersList;
+    }
+    @GetMapping(value = "/remove/{id}")
+    public List<Users> deleteUser(@PathVariable final long id){
+        usersRepository.deleteById(id);
+        return searchAll();
+    }
 
 }

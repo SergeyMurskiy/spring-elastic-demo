@@ -1,4 +1,4 @@
-package com.techprimers.elastic.model;
+package com.murskiy.elastic.model;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 

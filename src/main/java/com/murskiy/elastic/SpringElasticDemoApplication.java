@@ -1,4 +1,4 @@
-package com.techprimers.elastic;
+package com.murskiy.elastic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
